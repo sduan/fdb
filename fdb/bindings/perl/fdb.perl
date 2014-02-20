@@ -1,3 +1,3 @@
 #!/usr/bin/perl
-use fdb;
-print fdbc::fdb_get_max_api_version();
+use fdb_c;
+print fdb_cc::fdb_get_max_api_version();

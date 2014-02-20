@@ -5,9 +5,9 @@ LD = $(CC)
 SWIG_DIR = ../swig/
 SWIG_FLAGS = -perl5 -outcurrentdir
 
-TARGET = fdb.so
+TARGET = fdb_c.so
 FDB_C_LIB = /usr/lib/libfdb_c.so
-OBJECTS = fdb_wrap.o
+OBJECTS = fdb_c_wrap.o
 
 PERL_FLAGS = `perl -MConfig -e 'print join(" ", @Config{qw(ccflags optimize cccdlflags)}, "-I$$Config{archlib}/CORE")'`
 CFLAGS = $(PERL_FLAGS)
