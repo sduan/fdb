@@ -25,4 +25,4 @@ $(TARGET): $(OBJECTS)
 all:$(TARGET)
 
 clean:
-	rm -rf $(TARGET) *.pm *_wrap.c *.o
+	rm -rf $(TARGET) *_wrap.c *.o
