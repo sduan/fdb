@@ -1,11 +1,19 @@
 #!/usr/bin/lua
 require("fdb_c")
 
-print("FoundationDB max api version: "..fdb_c.fdb_get_max_api_version())
+fdb = {}
 
-print("Try to set the api version to 300!")
-err = fdb_c.fdb_select_api_version_impl(300, 300)
-if err > 0 then
-	print("Failed! Error message:"..fdb_c.fdb_get_error(err))
+function fdb.get_max_api_version()
+	return fdb_c.fdb_get_max_api_version()
 end
+
+function fdb.select_api_version( version )
+	return fdb_c.fdb_select_api_version_impl( version, version )
+end
+
+function fdb.get_error( error_no )
+	return fdb_c.fdb_get_error( error_no )
+end
+
+return fdb
 
